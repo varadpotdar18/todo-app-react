@@ -1,0 +1,281 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*      BASE + THEME STYLES     */
+/* ============================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme */
+body[data-theme="light"] {
+  background: #f2f3f7;
+  color: #1a1a1a;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* ============================= */
+/*         TODO CONTAINER        */
+/* ============================= */
+
+.todo-container {
+  width: 360px;
+  padding: 28px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+/* Light card */
+body[data-theme="light"] .todo-container {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark card */
+body[data-theme="dark"] .todo-container {
+  background: #2c2c2c;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+}
+
+/* ============================= */
+/*         HEADER + TOGGLE       */
+/* ============================= */
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Toggle section */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mode-label {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Switch core */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider design */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* When checked (dark mode ON) */
+input:checked + .slider {
+  background-color: #4a90e2;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* ============================= */
+/*         INPUT + BUTTON        */
+/* ============================= */
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* Light input */
+body[data-theme="light"] input {
+  background: #f7f7f7;
+  color: #222;
+  border-color: #cfcfcf;
+}
+
+/* Dark input */
+body[data-theme="dark"] input {
+  background: #3b3b3b;
+  color: #eee;
+  border-color: #555;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.input-area button {
+  padding: 12px 18px;
+  background: #4a90e2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-area button:hover {
+  background: #3d7ac0;
+}
+
+/* ============================= */
+/*         TODO ITEMS            */
+/* ============================= */
+
+.todo-list li {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+/* Light */
+body[data-theme="light"] .todo-list li {
+  background: #f3f3f3;
+  color: #222;
+}
+
+/* Dark */
+body[data-theme="dark"] .todo-list li {
+  background: #3a3a3a;
+  color: #eee;
+}
+
+/* ============================= */
+/*         RESPONSIVENESS        */
+/* ============================= */
+
+@media (max-width: 480px) {
+  .todo-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .input-area input,
+  .input-area button {
+    font-size: 14px;
+  }
+}
+
